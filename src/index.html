@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body class=" body">
+    <main class="app">
+        <section class="section_nav">
+            <div>
+                <h1>Expensive Product</h1>
+            </div>
+            <header class="header_content">
+                <nav class="navigation">
+                    <ul class="nav_list">
+                        <li class="li_item">
+                            <a href="#" data-home="home" class="nav_link">Home</a>
+                        </li>
+                        <li class="li_item">
+                            <a href="#" data-product="product" class="nav_link">Productos</a>
+                        </li>
+                        <li class="li_item">
+                            <a href="#" data-about="about" class="nav_link">About</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </section>
+        <section class="content_user">
+            <form class="form_content">
+                <div class="form_fields">
+                    <label>
+                        Nombre
+                        <input type="text">
+                    </label>
+                    <label>
+                        Apellido
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="form_fields">
+                    <label>
+                        Cedula #
+                        <input type="text" name="" id="">
+                    </label>
+                </div>
+                <div class="form_fields">
+                    <label>
+                        Ubuicacion
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="form_fields">
+                    <label>
+                        Numero de telefono
+                        <input type="text">
+                    </label>
+                </div>
+                <div class="form_fields">
+                    <label>
+                        <input type="text">
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <main />
+        <script>
+            const electron = require('electron');
+            const ipcRenderer = electron.ipcRenderer;
+            ipcRenderer.on('cpu', (event, data) => {
+                console.info('cpu: ' + data);
+            });
+            ipcRenderer.on('mem', (event, data) => {
+                console.info('memory: ' + data);
+            });
+            ipcRenderer.on('totalmemory', (event, data) => {
+                console.log('talal memory: ' + data);
+            })
+            console.log(ipcRenderer)
+        </script>
+</body>
+
+</html>
